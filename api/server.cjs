@@ -11,6 +11,16 @@ const { questions } = require("./questions.cjs");
 // `app.use(express.json())` **before** your route handlers!
 app.use(express.json());
 
+app.get("/random-question", (req, res) => {
+  const idx = Math.floor(Math.random() * questions.length);
+  const question = questions[idx];
+  res.json({
+    id: question.id,
+    statement: question.statement,
+    options: question.options,
+  });
+});
+
 app.get("/questions", (req, res) => {
   res.json(
     questions.map((q) => ({
@@ -31,6 +41,17 @@ app.post("/questions/", (req, res) => {
     }
   });
   res.status(200).json(result);
+});
+
+app.post("/questions/:id", (req, res) => {
+  const id = req.params.id;
+  const answer = req.body;
+  const question = questions.find((q) => q.id == id);
+  if (!question) {
+    res.status(400).json({ error: `Question with id ${id} was not found` });
+  } else {
+    res.status(200).json(answer === question.rightAnswer);
+  }
 });
 
 app.listen(port, () => {
