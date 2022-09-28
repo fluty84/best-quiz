@@ -26,6 +26,18 @@ npm run dev
 
 ## The available endpoints are the next ones:
 
+```GET http://localhost:3000/random-question/```
+
+It returns an object containing one of the questions available
+
+```javascript
+{
+  id: Number,
+  statement: String,
+  options: String[],
+}
+```
+
 ```GET http://localhost:3000/questions/```
 
 It returns an array containing the list of questions to be displayed:
@@ -43,7 +55,7 @@ It returns an array containing the list of questions to be displayed:
 
 ```POST http://localhost:3000/questions/```
 
-It expects to send in the body of the request an array containing the answers to the questions using the following format:
+It expects to receive in the body of the request an array containing the answers to the questions using the following format:
 ```javascript
 [
     {
@@ -57,6 +69,18 @@ And then it returns the number of questions that were guessed right:
 ```javascript
 result: Number
 ```
+
+```POST http://localhost:3000/questions/{id}```
+
+It expects to receive in the body of the request a string containing the answer to a certain question defined in the URL by its `id`:
+```javascript
+answer: String
+```
+And then it returns if the answer was right or not:
+```javascript
+result: Boolean
+```
+In case it doesn't find the question, it will return a 400 error
 
 ## The exercise
 1. Adjust `App.vue` or create a new view so it loads the questions from the backend ([axios](https://axios-http.com/docs/intro) is already installed, feel free to use it). You can also remove the HelloWorld and anything that is not relevant to this challenge.
