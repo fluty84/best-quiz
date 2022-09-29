@@ -2,10 +2,12 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const port = 3000;
+const QUESTIONS_LIMIT = 5;
 
 app.use(cors());
 
 const { questions } = require("./questions.cjs");
+const { shuffle } = require("./utils.cjs");
 
 // Parse JSON bodies for this app. Make sure you put
 // `app.use(express.json())` **before** your route handlers!
@@ -17,17 +19,19 @@ app.get("/random-question", (req, res) => {
   res.json({
     id: question.id,
     statement: question.statement,
-    options: question.options,
+    options: shuffle(question.options),
   });
 });
 
 app.get("/questions", (req, res) => {
   res.json(
-    questions.map((q) => ({
-      id: q.id,
-      statement: q.statement,
-      options: q.options,
-    }))
+    shuffle(questions)
+      .map((q) => ({
+        id: q.id,
+        statement: q.statement,
+        options: shuffle(q.options),
+      }))
+      .slice(0, QUESTIONS_LIMIT)
   );
 });
 
