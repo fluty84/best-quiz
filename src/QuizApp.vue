@@ -1,20 +1,37 @@
 <template>
   <div>
     <h1>This is a BEST quiz to test your knowledge</h1>
-    <quiz-question
-        v-for="question of questions"
-        :key="question.id"
-        :id="question.id"
-        :statement="question.statement"
-        :options="question.options"
-        :answer="getAnswer(question.id)"
-        @answer="text => setAnswer(question.id, text)"
-    />
-    <h1 v-if="result">
-        You guessed {{ result }} answers!
+    <section class="flex flex-col gap-4 mb-8">
+        <quiz-question
+            v-for="question of questions"
+            :key="question.id"
+            :id="question.id"
+            :statement="question.statement"
+            :options="question.options"
+            :answer="getAnswer(question.id)"
+            @answer="text => setAnswer(question.id, text)"
+        />
+    </section>
+
+    <h1 v-if="result !== null">
+        <span v-if="result === 0">You didn't guess any answers! :(</span>
+        <span v-else-if="result === 1">You guessed only {{ result }} answer!</span>
+        <span v-else-if="result < questions.length">You guessed {{ result }} answers!</span>
+        <span v-else>You guessed all the answers!! you are the master of BEST Quizes!</span>
+
+        <button
+            class="mt-8 w-full text-3xl"
+            @click="restart"
+        >
+            Try again
+        </button>
     </h1>
+
     <div v-else>
-        <button @click="submit">
+        <button
+            class="text-3xl w-full"
+            @click="submit"
+        >
             Send answers
         </button>
     </div>
@@ -40,14 +57,24 @@ export default {
         }
     },
 
-    async created() {
-        const { data } = await api.get("/questions")
-        this.questions = data;
+    created() {
+        this.getAnswers()
     },
 
     methods: {
+        async getAnswers() {
+            const { data } = await api.get("/questions")
+            this.questions = data
+        },
+
         getAnswer(id) {
             return this.answers.find(an => an.id === id)?.text
+        },
+
+        restart() {
+            this.result = null
+            this.answers = []
+            this.getAnswers()
         },
 
         setAnswer(id, text) {
