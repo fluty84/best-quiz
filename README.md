@@ -40,7 +40,7 @@ It returns an object containing one of the questions available
 
 ```GET http://localhost:3000/questions/```
 
-It returns an array containing the list of questions to be displayed:
+It returns an array containing a list containing 5 random questions to be displayed. The questions are picked and sorted randomly, and the possible answers too. The format should be the following:
 
 ```javascript
 [

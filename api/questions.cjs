@@ -100,5 +100,124 @@ module.exports = {
       ],
       rightAnswer: "Masa Bulatovic",
     },
+    {
+      id: 13,
+      statement: "Which LBG doesn't belong to Region D",
+      options: ["Athens", "Istanbul", "Kyiv", "Skopje"],
+      rightAnswer: "Skopje",
+    },
+    {
+      id: 14,
+      statement: "Who is the RA of Region J",
+      options: [
+        "Sofia Ferreira Leite",
+        "Francisco Baptista",
+        "Antoine Dupont",
+        "André Ribeiro",
+      ],
+      rightAnswer: "Francisco Baptista",
+    },
+    {
+      id: 15,
+      statement: "From which LBG is Luna, from The Constellation?",
+      options: ["Madrid", "Ghent", "Leuven", "Delft"],
+      rightAnswer: "Ghent",
+    },
+    {
+      id: 16,
+      statement: "Who is the coordinator of R&D WG?",
+      options: [
+        "Bogdan Andrei Baltes",
+        "Flávia Carvalhido",
+        "Rita Almeida",
+        "Francisco Raposo",
+      ],
+      rightAnswer: "Bogdan Andrei Baltes",
+    },
+    {
+      id: 17,
+      statement: "Who is the coordinator of Competitions Department?",
+      options: [
+        "Nese Sevgi Alkanli",
+        "Francesco Marino",
+        "Flávia Carvalhido",
+        "Ifigeneia Sideri",
+      ],
+      rightAnswer: "Nese Sevgi Alkanli",
+    },
+    {
+      id: 18,
+      statement: "Who is the oldest person in the International Board?",
+      options: [
+        "Dunja Olbina",
+        "Leo Boljesic",
+        "Simon Petit",
+        "Stathis Vezyris",
+      ],
+      rightAnswer: "Dunja Olbina",
+    },
+    {
+      id: 19,
+      statement: "Who was not born in December?",
+      options: [
+        "Aggelos Kokkinis",
+        "Anna Tsebenoha",
+        "Leo Boljesic",
+        "Simon Petit",
+      ],
+      rightAnswer: "Anna Tsebenoha",
+    },
+    {
+      id: 20,
+      statement:
+        "Where was the only BEST Course Thanos Pyliotis ever attended?",
+      options: ["Brno", "Prague", "Athens", "Madrid Carlos III"],
+      rightAnswer: "Brno",
+    },
+    {
+      id: 21,
+      statement:
+        "According to PA, how many Internal Events have Paco Gordillo attended?",
+      options: ["47", "56", "69", "70"],
+      rightAnswer: "70",
+    },
+    {
+      id: 22,
+      statement:
+        "Who is the trainer that delivered most hours in the last 12 months?",
+      options: [
+        "Lourenço Hart",
+        "Beatriz Madeira",
+        "Alexander Kadoglou",
+        "Irem Alpcetin",
+      ],
+      rightAnswer: "Lourenço Hart",
+    },
+    {
+      id: 23,
+      statement:
+        "Which LBG had in the last year the highest acceptance ratio when sending students to External Events?",
+      options: ["Timisoara", "Turin", "Madrid", "Rome Tor Vergata"],
+      rightAnswer: "Timisoara",
+    },
+    {
+      id: 24,
+      statement: "Which LBG hosted more Internal Events in the last 3 years?",
+      options: ["Tallinn", "Ghent", "Coimbra", "Istanbul"],
+      rightAnswer: "Tallinn",
+    },
+    {
+      id: 25,
+      statement:
+        "Which LBG sent more applications for External Events in the last year?",
+      options: ["Turin", "Madrid", "Milan", "Madrid Carlos III"],
+      rightAnswer: "Turin",
+    },
+    {
+      id: 26,
+      statement: "Which LBG is organising a BEST Course this winter?",
+      options: ["Graz", "Paris Polytechnique", "Ekaterinburg", "Las Palmas"],
+      rightAnswer: "Graz",
+    },
   ],
 };
