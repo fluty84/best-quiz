@@ -37,6 +37,7 @@ module.exports = {
         "A Jedi in South Africa",
         "Our partner NGO in Germany",
         "One of our corporate partners",
+        "Some sexual kink based on tying up your partner with ropes",
       ],
       rightAnswer: "Our partner NGO in Germany",
     },
@@ -102,13 +103,13 @@ module.exports = {
     },
     {
       id: 13,
-      statement: "Which LBG doesn't belong to Region D",
+      statement: "Which LBG doesn't belong to Region D?",
       options: ["Athens", "Istanbul", "Kyiv", "Skopje"],
       rightAnswer: "Skopje",
     },
     {
       id: 14,
-      statement: "Who is the RA of Region J",
+      statement: "Who is the RA of Region J?",
       options: [
         "Sofia Ferreira Leite",
         "Francisco Baptista",
@@ -218,6 +219,52 @@ module.exports = {
       statement: "Which LBG is organising a BEST Course this winter?",
       options: ["Graz", "Paris Polytechnique", "Ekaterinburg", "Las Palmas"],
       rightAnswer: "Graz",
+    },
+    {
+      id: 27,
+      statement: "Which region from this list has no LBGs from France?",
+      options: ["Region A", "Region E", "Region I", "Region J"],
+      rightAnswer: "Region A",
+    },
+    {
+      id: 28,
+      statement: "When was the current BEST logo approved?",
+      options: [
+        "PM2007 Valladolid",
+        "PM2009 Lviv",
+        "PM2008 Bucharest",
+        "PM2006 Ghent",
+      ],
+      rightAnswer: "PM2007 Valladolid",
+    },
+    {
+      id: 29,
+      statement: "What is FEANI?",
+      options: [
+        "Canadian Federation of Engineering Students",
+        "European Society for Engineering Education",
+        "European Students Forum Asociation",
+        "Federation of European Asociations National & International",
+      ],
+      rightAnswer: "European Society for Engineering Education",
+    },
+    {
+      id: 30,
+      statement: "Which was the first Baltic LBG to join BEST?",
+      options: ["Tallinn", "Vilnius", "Kaunas", "Riga"],
+      rightAnswer: "Tallinn",
+    },
+    {
+      id: 31,
+      statement: "Which was the first Spanish LBG to join BEST?",
+      options: ["Valladolid", "Madrid", "Valencia", "Barcelona"],
+      rightAnswer: "Barcelona",
+    },
+    {
+      id: 32,
+      statement: "Which was the first Balkan LBG to join BEST?",
+      options: ["Ljubljana", "Belgrade", "Bucharest", "Patras"],
+      rightAnswer: "Ljubljana",
     },
   ],
 };
