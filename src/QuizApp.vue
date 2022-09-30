@@ -1,6 +1,10 @@
 <template>
   <div>
     <h1>This is a BEST quiz to test your knowledge</h1>
+    <p class="p-3 bg-yellow-100 dark:bg-yellow-800 mt-5 outline-dashed outline-yellow-700 text-sm leading-6">
+        <span class="rounded-full text-white bg-yellow-700 inline-flex items-center justify-center font-serif text-xs w-4 h-4">i</span>
+        Select the answers you think are the right ones and then send them to check if you got them right.
+    </p>
     <section class="flex flex-col gap-4 mb-8">
         <quiz-question
             v-for="question of questions"
@@ -14,10 +18,30 @@
     </section>
 
     <h1 v-if="result !== null">
-        <span v-if="result === 0">You didn't guess any answers! :(</span>
-        <span v-else-if="result === 1">You guessed only {{ result }} answer!</span>
-        <span v-else-if="result < questions.length">You guessed {{ result }} answers!</span>
-        <span v-else>You guessed all the answers!! you are the master of BEST Quizes!</span>
+        <p
+            v-if="result === 0"
+            class="text-center"
+        >
+            You didn't guess any answers! :(
+        </p>
+        <p
+            v-else-if="result === 1"
+            class="text-center"
+        >
+            You guessed only {{ result }} answer!
+        </p>
+        <p
+            v-else-if="result < questions.length"
+            class="text-center"
+        >
+            You guessed {{ result }} answers!
+        </p>
+        <p
+            v-else
+            class="text-center"
+        >
+            You guessed all the answers!! you are the master of BEST Quizes!
+        </p>
 
         <button
             class="mt-8 w-full text-3xl"
@@ -29,7 +53,7 @@
 
     <div v-else>
         <button
-            class="text-3xl w-full"
+            class="text-xl w-full"
             @click="submit"
         >
             Send answers
@@ -42,7 +66,7 @@
 import QuizQuestion from "./components/QuizQuestion.vue"
 import axios from "axios"
 const api = axios.create({
-    baseURL: "http://localhost:3000/"
+    baseURL: "http://192.168.1.181:3000/"
 })
 export default {
     components: {
@@ -75,6 +99,7 @@ export default {
             this.result = null
             this.answers = []
             this.getAnswers()
+            window.scrollTo(0, 0)
         },
 
         setAnswer(id, text) {

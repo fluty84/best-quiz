@@ -4,7 +4,7 @@
 
 @layer base {
   h1 {
-    @apply text-4xl font-bold mb-1 mt-4;
+    @apply text-4xl font-bold mb-1;
   }
   h2 {
     @apply text-3xl font-bold mb-1 mt-4;
@@ -16,6 +16,23 @@
 
 @layer components {
   button {
-    @apply outline-none focus-visible:ring hover:ring focus-visible:ring-2 focus-visible:bg-blue-400 active:bg-blue-500 active:text-white transition-all ring-blue-300 p-3 shadow bg-blue-200 rounded-lg;
+    @apply
+      outline-none
+      focus-visible:ring
+      hover:ring
+      text-white
+      focus-visible:ring-2
+      focus-visible:bg-blue-600
+      active:bg-blue-700
+      active:text-white
+      transition-all
+      ring-blue-300
+      p-3
+      shadow
+      bg-blue-500
+      uppercase
+      font-bold
+      rounded-lg
+    ;
   }
 }
