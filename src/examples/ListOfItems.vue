@@ -27,6 +27,7 @@ export default {
 
     methods: {
         addItem() {
+            if (!this.value) return
             const id = this.items.length
             const text = this.value
             this.items.push({
