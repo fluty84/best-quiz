@@ -18,7 +18,7 @@ The code can run in Linux, MacOS or any virtual machine containing the former.
 
 You need to run the following commands to start both backend and frontend of this application:
 ```bash
-git clone git@github.com:fgordillo/best-quiz.git
+git clone https://github.com/fgordillo/best-quiz.git
 npm ci
 npm run backend
 npm run dev
